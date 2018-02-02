@@ -66,7 +66,7 @@ function luncher(){
 					popup.querySelector('.popup_description').innerHTML = this.querySelector('.description').innerHTML;
 					popup.querySelector('.popup_download').setAttribute('href', file);
 
-					popup.style.display = "flex";
+					popup.classList.add('shown');
 				});
 
 				// Le prochain aura un autre identifiant
@@ -115,9 +115,9 @@ var menu = function(shown){
 	if(shownArticle){
 		// Disparition et taille
 		for(var i = 0; i < articles.length; i++){
-			articles[i].style.display = "none";
+			articles[i].classList.remove('shown');
 		}
-		shownArticle.style.display = "flex";
+		shownArticle.classList.add('shown');
 	}
 
 	// Transition
@@ -129,7 +129,7 @@ var menu = function(shown){
 			if(target){
 				// On cache tous les articles
 				for(var k = 0; k < articles.length; k++){
-					articles[k].style.display = "none";
+					articles[k].classList.remove('shown');
 				}
 				// On enlève les couleurs
 				for(var j = 0; j < liste.length; j++) {
@@ -137,9 +137,7 @@ var menu = function(shown){
 				}
 				// On montre celui qu'on veut garder
 				this.classList.add('highlight');
-
-				target.style.display = "flex";
-				console.log(target);
+				target.classList.add('shown');
 			}
 		});
 	}
