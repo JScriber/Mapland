@@ -78,7 +78,8 @@
 	flex-flow: row nowrap;
 	justify-content: center;
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 80px;
+	margin-bottom: 100px;
 }
 .information section
 {
@@ -102,4 +103,45 @@
 	text-align: justify;
 	line-height: 30px;
 	font-weight: normal;
+}
+
+.information ul
+{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	list-style-type: none;
+	width: 75%;
+	margin: 60px auto;
+}
+.information ul li
+{
+	display: flex;
+	flex-flow: column wrap;
+
+	padding: 0 5px;
+}
+.information ul li img
+{
+	height: 48px;
+	margin-bottom: 8px;
+}
+.information ul li p
+{
+	color: #919191;
+	font-size: 17px;
+}
+.information strong
+{
+	font-weight: medium;
+	color: rgba(0, 0, 0, .8);
+}
+.information a
+{
+	text-decoration: none;
+	color: rgba(0, 0, 0, .8);
+}
+.information a:hover
+{
+	color: #6A1B9A;
 }
