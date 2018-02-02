@@ -49,7 +49,6 @@ function luncher(){
 				var modele = document.querySelector('#temporary a');
 				var carte = modele.cloneNode(true);
 				article.appendChild(carte);
-				console.log(carte);
 				// On applique les attributs sur le nouvel elements
 				carte.setAttribute('id', identifiant);
 				carte.setAttribute('data-file', attributs.fichier);
@@ -86,7 +85,7 @@ function luncher(){
 		});
 
 		// Mise en place du menu
-		menu("accueil", "#ffbaba");
+		menu("accueil");
 	}
 
 	// Récupération XML 
@@ -105,7 +104,7 @@ function luncher(){
 }
 
 
-var menu = function(shown, highlight){
+var menu = function(shown){
 	var conteneur = document.getElementById('conteneur'),
 	header = conteneur.querySelector('header'),
 	articles = conteneur.querySelectorAll('article'),
@@ -114,7 +113,6 @@ var menu = function(shown, highlight){
 	// Mise en place
 	var shownArticle = document.getElementById(shown);
 	if(shownArticle){
-		
 		// Disparition et taille
 		for(var i = 0; i < articles.length; i++){
 			articles[i].style.display = "none";
@@ -135,11 +133,13 @@ var menu = function(shown, highlight){
 				}
 				// On enlève les couleurs
 				for(var j = 0; j < liste.length; j++) {
-					liste[j].style.color = "#fff";
+					liste[j].classList.remove('highlight');
 				}
 				// On montre celui qu'on veut garder
-				this.style.color = highlight;
+				this.classList.add('highlight');
+
 				target.style.display = "flex";
+				console.log(target);
 			}
 		});
 	}
