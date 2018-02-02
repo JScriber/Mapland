@@ -237,36 +237,17 @@
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 200px;
-	margin-top: 20px;
-}
-#conteneur > footer:after
-{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(255, 35, 35, .8);
-	z-index: -5;
-}
-#conteneur > footer:before
-{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-image: linear-gradient(90deg, rgba(0, 0, 0,.0), rgba(168, 23, 106, .8));
-	z-index: -1;
+	height: auto;
+	margin-top: 30px;
+	background-color: #6A1B9A;
 }
 
 #conteneur > footer > section
 {
 	position: relative;
+	display: flex;
 	height: 180px;
+	padding: 15px 0;
 	width: 100%;
 }
 #conteneur > footer > section > span
@@ -274,9 +255,9 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
-	float: left;
 	width: 50%;
 	height: 100%;
+	padding: 5px 0;
 }
 #conteneur > footer > section > span > ul
 {
@@ -291,8 +272,7 @@
 	display: block;
 	color: #fff;
 	font-size: 15px;
-	opacity: .9;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 #conteneur > footer > section > span > ul > li > a
 {
@@ -300,7 +280,7 @@
 	text-decoration: none;
 	outline: none;
 	border: none;
-	opacity: .8;
+	opacity: .9;
 	color: #fff;
 }
 #conteneur > footer > section > span > ul > li > a:hover
@@ -316,8 +296,9 @@
 	color: #fff;
 	font-size: 13px;
 	opacity: .7;
+	margin-top: 20px;
 	font-weight: normal;
-	height: 10px;
+	height: 50px;
 	width: 100%;
 }
 
