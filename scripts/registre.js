@@ -80,7 +80,7 @@ function luncher(){
 		var popup = document.getElementById('popup');
 		popup.addEventListener('click', function(){
 			if(this.parentNode == document.body){
-				popup.style.display = "none";
+				popup.classList.remove('shown');
 			}
 		});
 

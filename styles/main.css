@@ -55,6 +55,10 @@
 	background-color: rgba(0, 0, 0, .8);
 	z-index: 5000000;
 }
+#popup.shown
+{
+	display: flex;
+}
 #popup section
 {
 	display: block;
@@ -223,93 +227,71 @@ article.shown
 {
 	display: flex;
 }
-article > a
+.card
 {
 	cursor: pointer;
 	position: relative;
 	display: flex;
+	flex-flow: column wrap;
 	align-items: center;
-	width: 400px;
-	height: 250px;
+	width: 600px;
+	height: 350px;
 	outline: none;
 	overflow: hidden;
-	margin: 10px 5px 10px 5px;
+	margin: 10px 5px;
 	text-decoration: none;
-	border: 1px solid #848484;
-	box-shadow: 0 0 55px 3px rgba(0, 0, 0,.2);
+	border-radius: 7px;
+	border: 1px solid rgba(0, 0, 0, .1);
 	transition: all .3s linear 0s;
 }
-article > a img
+.card img
 {
-	width: 100%;
+	width: 90%;
+	margin: 5px auto;
 }
-article > a h1
+.card h1
 {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	display: flex;
-	align-items: center;
-	padding-left: 20px;
-	height: 25px;
-	font-size: 12px;
-	font-weight: bold;
-	text-transform: uppercase;
+	display: block;
+	padding: 20px 0;
+	padding-left: 50px;
 	width: 100%;
-	background-color: rgba(255, 255, 255, .7);
-	color: #000;
+	font-size: 17px;
+	font-weight: normal;
+	width: 100%;
+	color: #fff;
+	font-family: 'Francois One', sans-serif;
+	background-color: #6A1B9A;
 	z-index: 5000;
 	transition: all .3s linear 0s;
 }
-article > a:hover
+.card div.description
 {
-	box-shadow: 0 0 55px 8px rgba(0, 0, 0,.2);
-}
-article > a:hover h1
-{
-	bottom: 225px;
-	background-color: #d63c4a;
-	color: #fff;
-}
-article > a:hover div.description
-{
-	bottom: 0;
-}
-article > a div.description
-{
-	position: absolute;
-	bottom: -500px;
-	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 225px;
 	width: 100%;
 	background-color: rgba(255, 255, 255, .9);
 	transition: all .3s linear 0s;
 }
-article > a div.description > p
+.card div.description > p
 {
 	width: 90%;
 	color: #000;
 	text-align: justify;
 	font-size: 15px;
 }
-article > a div.niveau
+.card div.niveau
 {
 	position: absolute;
 	top: 0;
-	right: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 25px;
-	padding: 0 10px 0 10px;
-	font-size: 14px;
-	font-weight: bold;
-	background-color: #d63c4a;
+	right: 20px;
+	display: block;
+	padding: 22px 0;
+	font-size: 15px;
+	font-family: 'Francois One', sans-serif;
+	font-weight: normal;
 	color: #fff;
-	z-index: 50;
+	z-index: 50000;
 }
 
 

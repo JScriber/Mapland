@@ -1,8 +1,6 @@
 .introduction
 {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
+
 	position: relative;
 	display: flex;
 	flex-flow: column wrap;
@@ -54,6 +52,9 @@
 
 .information h1
 {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	position: relative;
 	display: flex;
 	flex-flow: column wrap;
@@ -67,6 +68,7 @@
 }
 .information h1 p
 {
+	cursor: default;
 	color: #6A1B9A;
 	font-weight: normal;
 	font-size: 23px;
