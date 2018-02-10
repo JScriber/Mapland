@@ -274,7 +274,7 @@
 
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 418px) {
 	#conteneur header ul
 	{
 		position: relative;
@@ -289,6 +289,10 @@
 	#conteneur header ul li.highlight::before
 	{
 		display: none;
+	}
+	#conteneur header ul li.highlight
+	{
+		opacity: .8;
 	}
 }
 
