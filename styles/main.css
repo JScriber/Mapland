@@ -300,20 +300,27 @@
 
 article
 {
+	position: relative;
 	display: none;
 	width: 100%;
-	height: auto;
 	flex-wrap: wrap;
+	height: auto;
 	margin-bottom: 40px;
 	padding-bottom: 20px;
-	justify-content: space-around;
-	align-items: stretch;
 }
 article.shown
 {
 	display: flex;
 }
-
+article > ol
+{
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+}
 
 .card
 {
@@ -326,6 +333,10 @@ article.shown
 	background-color: #fff;
 	overflow: hidden;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+.card.hide
+{
+	display: none;
 }
 
 .card .header
@@ -348,8 +359,9 @@ article.shown
 	height: 40px;
 	margin: 0 10px;
 }
-.card .header span img
+.card .header span svg
 {
+	fill: #6A1B9A;
 	height: 23px;
 }
 

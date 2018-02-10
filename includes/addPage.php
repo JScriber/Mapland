@@ -5,26 +5,40 @@
 		?>
 			<article id="<?php echo $categorie; ?>">
 			<?php
+				include 'addFinder.php';
 				include 'connection.php';
 				$requete = 'SELECT titre, niveau, image, description, pdf, previsualisation FROM cartes WHERE categorie = \''.$categorie.'\' ORDER BY titre';
 
 				$cartes = $bdd->query($requete);
-
+			?>
+				<ol>
+			<?php
 				while($carte = $cartes->fetch()){
+					$niveau = strtolower($carte["niveau"]);
 				?>
-					<div class="card"">
+					<div class="card <?php
+						if(strcmp($niveau, "général") == 0)
+						{
+							echo "culture";
+						}else{
+							echo "courses";
+						}
+					?>">
 						<div class="header">
 							<span>
 								<?php
-									$niveau = strtolower($carte["niveau"]);
 									if(strcmp($niveau, "général") == 0)
 									{
 									?>
-										<img src="images/star.svg"/>
+										<svg viewBox="0 0 24 24">
+											<use xlink:href="#IMG_CULTURE"></use>
+										</svg>
 									<?php
 									}else{
 									?>
-										<img src="images/other.svg"/>
+										<svg viewBox="0 0 24 24">
+											<use xlink:href="#IMG_BOOK"></use>
+										</svg>
 									<?php
 									}
 								?>
@@ -55,6 +69,7 @@
 				<?php
 				}
 			?>
+				</ol>
 			</article>
 		<?php
 		}

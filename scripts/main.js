@@ -83,4 +83,43 @@ window.addEventListener('load', function(){
 		});
 	}
 
+
+	// Tri des cartes
+	var switchers = document.querySelectorAll('.switcher');
+	for(var i = 0; i < switchers.length; i++){
+		switchers[i].addEventListener('click', function(e){
+			var target = e.target;
+			while(target.tagName != "LI" && target != e.currentTarget){
+				target = target.parentNode;
+			}
+			if(target.tagName == "LI"){
+				// GUI
+				var highlightClass = "selected";
+				var oldLi = e.currentTarget.querySelector('.'+highlightClass);
+				if(oldLi){
+					oldLi.classList.remove(highlightClass);
+				}
+				target.classList.add(highlightClass);
+
+				var sift = target.getAttribute('data-sift');
+				var article = e.currentTarget.parentNode.parentNode;
+
+				// Restore the previous hidden ones
+				var hiddenOnes = article.querySelectorAll('ol > .card.hide');
+				for(var j = 0; j < hiddenOnes.length; j++){
+					hiddenOnes[j].classList.remove('hide');
+				}
+				
+				if(sift != "all"){
+					var toHide = article.querySelectorAll('.card:not(.'+sift+')');
+					var toHideLength = toHide.length;
+					if(toHideLength > 0){
+						for(var j = 0; j < toHideLength; j++){
+							toHide[j].classList.add('hide');
+						}
+					}
+				}
+			}
+		});
+	}
 });

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-	<!-- Thought up by Anthony GST ~ Dedicated to G.D., my star my perfect silence. 
-	- 01/06/2017 Version 0.1.3 -->
+	<!-- Created by Anthony GST
+	- 01/06/2017 -->
 	<head>
 		<!-- CSS files -->
 		<link rel="stylesheet" href="styles/main.css" type="text/css"/>
+		<link rel="stylesheet" href="styles/finder.css" type="text/css"/>
 		<link rel="stylesheet" href="styles/accueil.css" type="text/css"/>
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -14,6 +15,7 @@
 	</head>
 
 	<body>
+		<?php include('includes/vectors.php'); ?>
 		<div id="popup">
 			<nav>
 				<p id="popupName">Test</p>
