@@ -7,7 +7,7 @@ As said before, the project's main goal is to give out and share the work done b
 
 # Quick overview
 ## Responsive design
-![The design meant for mobile devices](../../master/tree/docs/Screenshot-mapland-responsive.jpg)
+![The design meant for mobile devices](../master/docs/Screenshot-mapland-responsive.JPG)
 
 
 # Other things to mention
