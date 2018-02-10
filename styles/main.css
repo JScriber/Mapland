@@ -14,121 +14,123 @@
 	background-color: #6A1B9A;
 }
 
-/**************************************************************\
-	-> Le SPLASH SCREEN
-\**************************************************************/
-#splashscreen
-{
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background-color: #efefef;
-	z-index: 5000000000000;
-}
-#splashscreen img
-{
-	height: 110px;
-}
-
 
 /**************************************************************\
-	-> Le POPUP
+	-> La preview
 \**************************************************************/
 #popup
 {
 	cursor: default;
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 0%;
+	left: 0%;
 	display: none;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background-color: rgba(0, 0, 0, .8);
+	overflow-y: scroll;
 	z-index: 5000000;
+	background-color: #fff;
 }
 #popup.shown
 {
-	display: flex;
-}
-#popup section
-{
 	display: block;
-	width: 480px;
-	height: auto;
-	background-color: #fff;
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 0 55px 3px rgba(0, 0, 0,.2);
 }
-#popup section .popup_title
+#popup nav
+{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 60px;
+	overflow: hidden;
+	border-bottom: 1px solid #fff;
+	background-color: #6A1B9A;
+	z-index: 2000;
+}
+#popup nav p
+{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	position: relative;
+	margin-left: 30px;
+	color: #fff;
+	font-size: 19px;
+	font-weight: normal;
+	padding-right: 16px;
+	font-family: 'Francois One', sans-serif;
+}
+#popup nav p:first-child::before
+{
+	content: '';
+	position: absolute;
+	top: 20%;
+	right: -2px;
+	height: 60%;
+	width: 1px;
+	opacity: .6;
+	background-color: #fff;
+}
+#popup nav button
 {
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 55px;
+	height: 55px;
+	margin-right: 20px;
+	background: transparent;
+	border: none;
+	outline: none;
+}
+#popup nav button::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	transform: scale(0);
+	background-color: #fff;
+	opacity: .4;
+	transition: all .15s linear 0s;
+}
+#popup nav button:active::before
+{
+	transform: scale(1.8);
+}
+#popup nav button img
+{
+	height: 25px;
+}
+
+#popup div
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin-top: 65px;
+	padding-bottom: 50px;
 	width: 100%;
-	height: 80px;
-	border-bottom: 1px solid #000;
 }
-#popup section .popup_title > p
+#popup div > img
 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 80%;
-	height: 100%;
-	font-size: 23px;
-	text-align: center;
-	font-weight: bold;
-	color: #000;
-}
-#popup section .popup_description
-{
-	display: block;
-	margin: 20px auto;
-	width: 80%;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	height: auto;
-	color: #000;
-	text-align: justify;
-	font-size: 14px;
+	min-height: auto;
+	width: 96%;
 }
-#popup section ul
-{
-	display: block;
-	border-top: 1px solid #000;
-}
-#popup section ul a
-{
-	cursor: pointer;
-	float: left;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
-	height: 50px;
-	color: #fff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 15px;
-	font-weight: normal;
-}
-.popup_partager
-{
-	background-image: linear-gradient(90deg, #3225b6, #2279a6);
-}
-.popup_download
-{
-	background-image: linear-gradient(90deg, #fc4c4e, #b92063);
-}
+
+
 
 /**************************************************************\
 	-> Le CONTENEUR
@@ -147,9 +149,6 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	position: fixed;
-	top: 0;
-	left: 0;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -209,7 +208,58 @@
 {
 	opacity: .8;
 }
+@media screen and (max-width: 650px) {
+	#conteneur header
+	{
+		flex-flow: column wrap;
+		align-items: center;
+		height: auto;
+	}
+	#conteneur header img
+	{
+		margin: 20px 0;
+		margin-left: 0;
+		height: 70px;
+	}
+	#conteneur header img:active
+	{
+		transform: scale(.95);
+	}
+	#conteneur header ul
+	{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		margin-right: 0;
+		height: 65px;
+	}
+	#conteneur header ul li
+	{
+		display: flex;
+		flex-grow: 1;
+		padding: 0;
+	}
 
+}
+
+@media screen and (max-width: 430px) {
+	#conteneur header ul
+	{
+		position: relative;
+		height: auto;
+		flex-flow: row wrap;
+	}
+	#conteneur header ul li
+	{
+		height: 65px;
+		width: 50%;
+	}
+	#conteneur header ul li:first-child,
+	#conteneur header ul li:first-child::before
+	{
+		display: none;
+	}
+}
 
 
 
@@ -219,81 +269,190 @@ article
 	width: 100%;
 	height: auto;
 	flex-wrap: wrap;
-	margin-top: 70px;
+	margin-bottom: 40px;
 	padding-bottom: 20px;
 	justify-content: space-around;
+	align-items: stretch;
 }
 article.shown
 {
 	display: flex;
 }
+
+
 .card
 {
-	cursor: pointer;
 	position: relative;
-	display: flex;
-	flex-flow: column wrap;
-	align-items: center;
-	width: 600px;
-	height: 350px;
-	outline: none;
+	display: block;
+	width: 340px;
+	height: auto;
+	border-radius: 5px;
+	margin-top: 50px;
+	background-color: #fff;
 	overflow: hidden;
-	margin: 10px 5px;
-	text-decoration: none;
-	border-radius: 7px;
-	border: 1px solid rgba(0, 0, 0, .1);
-	transition: all .3s linear 0s;
-}
-.card img
-{
-	width: 90%;
-	margin: 5px auto;
-}
-.card h1
-{
-	display: block;
-	padding: 20px 0;
-	padding-left: 50px;
-	width: 100%;
-	font-size: 17px;
-	font-weight: normal;
-	width: 100%;
-	color: #fff;
-	font-family: 'Francois One', sans-serif;
-	background-color: #6A1B9A;
-	z-index: 5000;
-	transition: all .3s linear 0s;
-}
-.card div.description
-{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	background-color: rgba(255, 255, 255, .9);
-	transition: all .3s linear 0s;
-}
-.card div.description > p
-{
-	width: 90%;
-	color: #000;
-	text-align: justify;
-	font-size: 15px;
-}
-.card div.niveau
-{
-	position: absolute;
-	top: 0;
-	right: 20px;
-	display: block;
-	padding: 22px 0;
-	font-size: 15px;
-	font-family: 'Francois One', sans-serif;
-	font-weight: normal;
-	color: #fff;
-	z-index: 50000;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 }
 
+.card .header
+{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	height: 58px;
+}
+.card .header span
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+}
+.card .header span img
+{
+	height: 23px;
+}
+
+.card .header h1
+{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	font-weight: normal;
+	font-size: 17px;
+	color: #000;
+	z-index: 400;
+}
+.card .header h1 p:last-child
+{
+	font-size: 14px;
+	opacity: .6;
+	margin-top: 3px;
+}
+
+.card > span
+{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 180px;
+	overflow: hidden;
+}
+.card > span img
+{
+	width: 100%;
+}
+
+.card > p
+{
+	color: rgba(0, 0, 0, .8);
+	padding: 20px 25px;
+	font-size: 15px;
+	margin-bottom: 48px;
+}
+.card nav
+{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 45px;
+	padding: 0 10px;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+.card nav li
+{
+	display: flex;
+}
+.card nav a
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 45px;
+	outline: none;
+}
+.card nav a::before
+{
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 1px;
+	width: 38px;
+	height: 38px;
+	transform: scale(0);
+	border-radius: 50%;
+	background-color: #000;
+	opacity: .2;
+	transition: all .2s linear 0s;
+}
+.card nav a:active::before
+{
+	transform: scale(1);
+}
+.card nav li > a.text
+{
+	position: relative;
+	display: block;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	border-radius: 4px;
+	margin-right: 20px;
+	color: rgba(0, 0, 0, .7);
+	font-size: 13px;
+	font-weight: bold;
+	overflow: hidden;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.card nav li > a.text::before,
+.card nav li > a.text::after
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .1; 
+	border-radius: 0;
+	background-color: #6A1B9A;
+	transform: scaleX(0);
+	transform-origin: 50% 0;
+	transition: all .1s linear 0s;
+}
+.card nav li > a.text::after
+{
+	transition: all .24s linear 0s;
+}
+.card nav li > a.text:active
+{
+	color: #6A1B9A;
+}
+.card nav li > a.text:active::before,
+.card nav li > a.text:active::after
+{
+	transform: scaleX(1);
+}
+.card nav a img
+{
+	height: 18px;
+	opacity: .7;
+}
 
 
 #conteneur > footer

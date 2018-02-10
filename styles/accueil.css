@@ -30,12 +30,14 @@
 	font-size: 42px;
 	font-family: 'Francois One', sans-serif;
 	text-transform: uppercase;
+	text-align: center;
 }
 .introduction p
 {
 	font-size: 17px;
 	margin-top: 18px;
 	font-family: 'Francois One', sans-serif;
+	text-align: center;
 }
 
 
@@ -149,4 +151,19 @@
 .information a:hover
 {
 	color: #6A1B9A;
+}
+
+
+@media screen and (max-width: 770px) {
+	
+	.information ul
+	{
+		width: 100%;
+	}
+	#accueil ol
+	{
+		margin-top: 20px;
+		flex-flow: column wrap;
+		margin-bottom: 20px;
+	}
 }
