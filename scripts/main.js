@@ -172,8 +172,6 @@ window.addEventListener('load', function(){
 				value = value.replace(/c/gi, "(c|ç)");
 				var valueExp = new RegExp(value, 'i');
 
-				console.log(valueExp);
-
 				// Test of the title first
 				if(valueExp.test(title) || valueExp.test(description)){
 					return true;
