@@ -37,6 +37,10 @@
 	transition: background .15s linear 0s;
 	animation: moveDown .31s ease-out forwards;
 }
+#finder ul.switcher li:last-child
+{
+	margin-right: 0;
+}
 #finder ul.switcher li:nth-child(2)
 {
 	animation-duration: .38s;
@@ -76,3 +80,18 @@
 	fill: #fff;
 }
 
+
+@media screen and (max-width: 800px) {
+	#finder
+	{
+		justify-content: center;
+		height: 72px;
+	}
+	#finder ul.switcher
+	{
+		height: 40px;
+		width: 90%;
+		margin-left: 0;
+		justify-content: space-around;
+	}
+}
