@@ -111,6 +111,10 @@ window.addEventListener('load', function(){
 				target = target.parentNode;
 			}
 			if(target.tagName == "LI"){
+				// Drop the searchbar
+				var search = document.getElementById('search');
+				search.value = "";
+				
 				// GUI
 				var highlightClass = "selected";
 				var oldLi = e.currentTarget.querySelector('.'+highlightClass);
@@ -140,4 +144,75 @@ window.addEventListener('load', function(){
 			}
 		});
 	}
+
+	// Recherche de cartes
+	var search = document.getElementById('search');
+	search.addEventListener('keyup', function(e){
+		var value = this.value.toLowerCase();
+		var hideClass = "hide";
+
+		var currentArticle = document.querySelector('article.shown');
+
+		if(currentArticle){
+			var cards = currentArticle.querySelectorAll('.card');
+
+			// Get the current sift method
+			var currentTag = currentArticle.querySelector('.switcher li.selected'),
+			sift;
+			if(currentTag){
+				sift = currentTag.getAttribute('data-sift');
+			}
+
+			// Test string function
+			var isInside = function(value, title, description){
+				value = value.trim();
+				title = title.toLowerCase();
+				description = description.toLowerCase();
+
+				// Test of the title first
+				if(title.indexOf(value) != -1){
+					return true;
+				}
+				if(description.indexOf(value) != -1){
+					return true;
+				}
+				return false;
+			}
+
+			if(value == ""){
+				for(var i = 0; i < cards.length; i++){
+					if(sift == "all"){
+						cards[i].classList.remove(hideClass);
+					}else{
+						if(cards[i].classList.contains(sift)){
+							cards[i].classList.remove(hideClass);
+						}else{
+							cards[i].classList.add(hideClass);
+						}
+					}
+				}
+			}else{
+				// Checks if the current card has the tag
+				var hasTag = function(currentCard){
+					if(sift == "all"){
+						return true;
+					}else{
+						return currentCard.classList.contains(sift);
+					}
+				}
+
+				for(var i = 0; i < cards.length; i++){
+					var title = cards[i].querySelector('.header p').innerHTML;
+					var description = cards[i].querySelector('.description').innerHTML;
+
+					if(isInside(value, title, description) && hasTag(cards[i])){
+						cards[i].classList.remove(hideClass);
+					}else{
+						cards[i].classList.add(hideClass);
+					}
+				}
+			}
+
+		}
+	});
 });

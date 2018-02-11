@@ -34,7 +34,7 @@
 				<img id="logoPrincipal" src="images/system/logos/MapLand.png"/>
 				<div class="searchBar">
 					<span>
-						<input type="text" placeholder="Rechercher une carte"/>
+						<input id="search" autocomplete="off" type="text" placeholder="Rechercher une carte"/>
 					</span>
 					<svg viewBox="0 0 24 24">
 						<use xlink:href="#IMG_SEARCH"></use>

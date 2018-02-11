@@ -51,7 +51,7 @@
 						<span>
 							<img src="images/illustrations/<?php echo $carte["image"]; ?>"/>
 						</span>
-						<p><?php echo $carte["description"]; ?></p>
+						<p class="description"><?php echo $carte["description"]; ?></p>
 						<nav>
 							<li>
 								<a>
