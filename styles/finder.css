@@ -35,6 +35,15 @@
 	margin-right: 12px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
 	transition: background .15s linear 0s;
+	animation: moveDown .31s ease-out forwards;
+}
+#finder ul.switcher li:nth-child(2)
+{
+	animation-duration: .38s;
+}
+#finder ul.switcher li:nth-child(3)
+{
+	animation-duration: .44s;
 }
 #finder ul.switcher li svg
 {

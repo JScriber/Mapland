@@ -146,6 +146,9 @@
 
 #conteneur header
 {
+	position: fixed;
+	top: 0;
+	left: 0;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -170,6 +173,17 @@
 	transform: scale(.95);
 }
 
+@keyframes moveDown
+{
+	from
+	{
+		transform: translateY(-80px);
+	}
+	to
+	{
+		transform: translateY(0px);
+	}
+}
 #conteneur header div.searchBar
 {
 	position: relative;
@@ -180,6 +194,7 @@
 	background: rgba(255, 255, 255, .2);
 	border-radius: 3px;
 	flex-grow: 1;
+	animation: moveDown .26s ease-out forwards;
 }
 #conteneur header div.searchBar span
 {
@@ -272,6 +287,10 @@
 
 /* Menu pour la page d'accueil */
 
+#conteneur header.light
+{
+	box-shadow: none;
+}
 #conteneur header.light .searchBar
 {
 	display: none;
@@ -350,6 +369,7 @@ article
 	width: 100%;
 	flex-wrap: wrap;
 	height: auto;
+	margin-top: 70px;
 	margin-bottom: 40px;
 	padding-bottom: 20px;
 }
