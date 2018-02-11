@@ -30,10 +30,17 @@
 
 		<div id="conteneur">
 			<!-- Bandeau -->
-			<header>
+			<header class="light">
 				<img id="logoPrincipal" src="images/system/logos/MapLand.png"/>
+				<div class="searchBar">
+					<span>
+						<input type="text" placeholder="Rechercher une carte"/>
+					</span>
+					<svg viewBox="0 0 24 24">
+						<use xlink:href="#IMG_SEARCH"></use>
+					</svg>
+				</div>
 				<ul id="liens">
-					<li data-article="accueil" class="highlight">Accueil</li>
 					<li data-article="histoire">Histoire</li>
 					<li data-article="geographie">Géographie</li>
 					<li data-article="physique">Physique</li>

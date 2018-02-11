@@ -4,7 +4,9 @@ window.addEventListener('load', function(){
 	if(liens){
 		liens.addEventListener('click', function(e){
 			var target = e.target,
+			menu = e.currentTarget.parentNode;
 
+			menuAttribute = "light",
 			showAttribute = "shown",
 			listHighlight = "highlight";
 
@@ -22,10 +24,16 @@ window.addEventListener('load', function(){
 				article.classList.add(showAttribute);
 
 				// Surbrillance dans la liste supprimée
-				e.currentTarget.querySelector('.'+listHighlight).classList.remove(listHighlight);
+				var oldDisplay = e.currentTarget.querySelector('.'+listHighlight);
+				if(oldDisplay){
+					oldDisplay.classList.remove(listHighlight);
+				}
 
 				// Ajout de la nouvelle surbrillance
 				target.classList.add(listHighlight);
+
+				// Menu avec toutes les fonctionnalités
+				menu.classList.remove(menuAttribute);
 			}
 		});
 	}else{
@@ -34,10 +42,20 @@ window.addEventListener('load', function(){
 
 	// Retour spécial à l'accueil
 	var logoPrincipal = document.getElementById('logoPrincipal');
-	logoPrincipal.addEventListener('click', function(){
+	logoPrincipal.addEventListener('click', function(e){
 		var showAttribute = "shown";
+		var menuAttribute = "light";
+
+		var menu = e.currentTarget.parentNode;
+		var highlit = menu.querySelector('.highlight');
+		if(highlit){
+			highlit.classList.remove('highlight');
+		}
+
 		var oldArticle = document.querySelector('#conteneur > article.'+showAttribute);
 		oldArticle.classList.remove(showAttribute);
+
+		menu.classList.add(menuAttribute);
 
 		var article = document.getElementById('accueil');
 		if(article){
