@@ -567,6 +567,41 @@ article > ol
 	opacity: .7;
 }
 
+/* Not found section */
+.notFound
+{
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	width: 100%;
+	margin: 200px 0;
+	margin-top: 160px;
+}
+.notFound.hidden
+{
+	display: none;
+}
+.notFound svg
+{
+	fill: #919191;
+	height: 60px;
+}
+.notFound span
+{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	color: #919191;
+	margin-top: 25px;
+	font-size: 17px;
+}
+.notFound span p:last-child
+{
+	font-weight: bold;
+	margin-left: 4px;
+}
+
+
 
 #conteneur > footer
 {

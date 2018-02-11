@@ -69,6 +69,15 @@
 				<?php
 				}
 			?>
+					<div class="notFound hidden">
+						<svg viewBox="0 0 24 24">
+							<use xlink:href="#IMG_NOTFOUND"></use>
+						</svg>
+						<span>
+							<p>Aucun résultat pour </p>
+							<p class="searchBarTry">[Error]</p>
+						</span>
+					</div>
 				</ol>
 			</article>
 		<?php

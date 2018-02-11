@@ -181,6 +181,7 @@ window.addEventListener('load', function(){
 				return false;
 			}
 
+			var notFound = currentArticle.querySelector('.notFound');
 			if(value == ""){
 				for(var i = 0; i < cards.length; i++){
 					if(sift == "all"){
@@ -193,6 +194,8 @@ window.addEventListener('load', function(){
 						}
 					}
 				}
+				// Hide the not found section
+				notFound.classList.add('hidden');
 			}else{
 				// Checks if the current card has the tag
 				var hasTag = function(currentCard){
@@ -202,6 +205,7 @@ window.addEventListener('load', function(){
 						return currentCard.classList.contains(sift);
 					}
 				}
+				var occurences = 0;
 
 				for(var i = 0; i < cards.length; i++){
 					var title = cards[i].querySelector('.header p').innerHTML;
@@ -209,8 +213,19 @@ window.addEventListener('load', function(){
 
 					if(isInside(value, title, description) && hasTag(cards[i])){
 						cards[i].classList.remove(hideClass);
+						occurences++;
 					}else{
 						cards[i].classList.add(hideClass);
+					}
+				}
+				// Show the not found section
+				if(notFound){
+					if(occurences != 0){
+						notFound.classList.add('hidden');
+					}else{
+						notFound.classList.remove('hidden');
+						var searchBarTry = notFound.querySelector('.searchBarTry');
+						searchBarTry.innerHTML = value;
 					}
 				}
 			}
