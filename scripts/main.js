@@ -114,7 +114,7 @@ window.addEventListener('load', function(){
 				// Drop the searchbar
 				var search = document.getElementById('search');
 				search.value = "";
-				
+
 				// GUI
 				var highlightClass = "selected";
 				var oldLi = e.currentTarget.querySelector('.'+highlightClass);
@@ -166,14 +166,16 @@ window.addEventListener('load', function(){
 			// Test string function
 			var isInside = function(value, title, description){
 				value = value.trim();
-				title = title.toLowerCase();
-				description = description.toLowerCase();
+
+				value = value.replace(/e/gi, "(e|é|ê|è)");
+				value = value.replace(/è/gi, "(e|é|ê|è)");
+				value = value.replace(/c/gi, "(c|ç)");
+				var valueExp = new RegExp(value, 'i');
+
+				console.log(valueExp);
 
 				// Test of the title first
-				if(title.indexOf(value) != -1){
-					return true;
-				}
-				if(description.indexOf(value) != -1){
+				if(valueExp.test(title) || valueExp.test(description)){
 					return true;
 				}
 				return false;
