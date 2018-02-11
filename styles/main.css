@@ -633,9 +633,15 @@ article > ol
 }
 
 
+@media screen and (max-width: 800px) {
+	article 
+	{
+		margin-top: 0;
+	}
+}
 @media screen and (max-width: 418px) {
 	article 
 	{
-		margin-top: 0px;
+		margin-top: 0;
 	}
 }
