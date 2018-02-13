@@ -4,12 +4,13 @@
 	- 01/06/2017 -->
 	<head>
 		<!-- CSS files -->
+		<link rel="stylesheet" href="styles/general.css" type="text/css"/>
 		<link rel="stylesheet" href="styles/main.css" type="text/css"/>
 		<link rel="stylesheet" href="styles/finder.css" type="text/css"/>
 		<link rel="stylesheet" href="styles/accueil.css" type="text/css"/>
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel="shortcut icon" href="images/system/logos/MapLand.png">
+		<link rel="shortcut icon" href="images/system/logos/favicon.png">
 		<meta charset="utf-8" />
 		<title>MapLand</title>
 	</head>
