@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 *
 {
 	margin: 0;
 	padding: 0;
-	font-family: 'Roboto', arial, sans-serif;
+	font-family: 'Roboto', sans-serif, arial;
 }
 ::selection
 {
